@@ -63,6 +63,7 @@ export default function SelectSearch ({ value, onChange }: Props) {
   const handleDelete = () => {
     setInputSearch('')
     onChange(null)
+    setOptionsArray(options)
   }
 
   return (
