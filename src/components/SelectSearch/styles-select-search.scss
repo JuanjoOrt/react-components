@@ -55,6 +55,14 @@ $gray2: rgba(229, 229, 229, 0.65);
         }
       }
     }
+
+    .icon {
+      position: absolute;
+      right: 6px;
+      height: 100%;
+      cursor: pointer;
+      animation: selector .1s;
+    }
   }
 }
 

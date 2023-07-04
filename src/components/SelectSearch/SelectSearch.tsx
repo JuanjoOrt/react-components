@@ -1,5 +1,6 @@
 import './styles-select-search.scss'
 import { useEffect, useRef, useState } from 'react'
+import { AiOutlineCloseCircle } from 'react-icons/ai'
 
 type Option = {
   id: number,
@@ -52,10 +53,16 @@ export default function SelectSearch ({ value, onChange }: Props) {
 
   const handleFocusSearch = () => {
     setShowSelector(true)
+    onChange(null)
   }
 
   const handleSelect = (option) => {
     onChange(option)
+  }
+
+  const handleDelete = () => {
+    setInputSearch('')
+    onChange(null)
   }
 
   return (
@@ -67,6 +74,7 @@ export default function SelectSearch ({ value, onChange }: Props) {
             {optionsArray.map(option => <div key={option.id} onClick={() => handleSelect(option)}>{option.name}</div> )}
           </div>
         )}
+        {(inputSearch || value) && <AiOutlineCloseCircle className='icon' fill='#888' onClick={handleDelete} />}
       </div>
     </div>
   )
