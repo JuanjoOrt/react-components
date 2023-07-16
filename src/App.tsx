@@ -1,15 +1,13 @@
-import SelectSearch from './components/SelectSearch/SelectSearch'
-import { useState } from 'react'
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import PageSelectSearch from "./components/SelectSearch/page";
 
 function App() {
-  const [val, setVal] = useState()
-
   return (
-    <>
-      <div style={{ width: '100%' }}>
-        <SelectSearch onChange={(e) => setVal(e)} value={val} />
-      </div>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/selectsearch' element={<PageSelectSearch />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
